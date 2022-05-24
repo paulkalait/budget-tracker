@@ -46,4 +46,13 @@
   <!-- add idb into file -->
   <script src="js/idb.js"></script>
 </body>
+<script>
+ (function(){
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./service-worker.js')
+    .then(() => console.log('service Worker registered successfully.'))
+    .catch(error => console.log('service worker Registration failed:', error))
+}
+})();
+</script>
 </html>
